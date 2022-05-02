@@ -3,6 +3,7 @@ import './App.css';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import Rate from './Rate/Rate';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,24 +17,7 @@ class App extends React.Component {
 
         <div className="container">
           <main>
-            <h3> Курс валют на 2 мая 2022</h3>
-            <div className="flex-container">
-              <div className="block flex-item">
-                <div className="currency-name">USD</div>
-                <div className="currency-in">1500 Kr</div>
-                <div className="currency-out">1200 Kr</div>
-              </div>
-              <div className="block flex-item">
-                <div className="currency-name">USD</div>
-                <div className="currency-in">1500 Kr</div>
-                <div className="currency-out">1200 Kr</div>
-              </div>
-              <div className="block flex-item">
-                <div className="currency-name">USD</div>
-                <div className="currency-in">1500 Kr</div>
-                <div className="currency-out">1200 Kr</div>
-              </div>
-            </div>
+            <Rate />
             <h3> Калькулятор обмена</h3>
             <div className="block">
               <div>Я хочу</div>
