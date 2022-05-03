@@ -49,7 +49,7 @@ class App extends React.Component {
             <div className="well">
               На нашем сайте мы используем cookie для сбора информации технического характера.<br /> в частности, для
               персонифицированной работы сайта мы обрабатываем IP-адрес региона вашего местоположения.&nbsp;
-              <a className="btn btn-primary btn-sm">OK</a></div>
+              <button className="btn btn-primary btn-sm">OK</button></div>
           </div>
         </div>
         <Footer />
