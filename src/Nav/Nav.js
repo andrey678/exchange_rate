@@ -1,25 +1,22 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './Nav.css';
 
 class Nav extends React.Component {
-  constructor(props) {
-    super(props);
 
-  }
   render() {
     return (
 
       <div className="header-nav">
-          <div className="container">
-            <nav>
-              <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Пункты обмена</a></li>
-                <li><a href="#">Контакты</a></li>
-              </ul>
-            </nav>
-          </div>
+        <div className="container">
+          <nav>
+            <Link to="/" className='nav-link'>Главная</Link>
+            <Link to="/offices" className='nav-link'>Пункты обмена</Link>
+            <Link to="/contacts" className='nav-link'>Контакты</Link>
+          </nav>
         </div>
+      </div>
 
     );
   }

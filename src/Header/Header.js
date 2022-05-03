@@ -4,10 +4,7 @@ import './Header.css';
 import Nav from '../Nav/Nav';
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
 
-  }
   render() {
     return (
 
@@ -16,7 +13,6 @@ class Header extends React.Component {
         <div className="main-header">
           <div className="container">
             <h1 className="site-title">Currency Exchange Rate</h1>
-
           </div>
         </div>
         <Nav />

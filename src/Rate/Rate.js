@@ -15,7 +15,7 @@ class Rate extends React.Component {
   }
 
   getRate = () => {
-
+    // Делаем запрос на сервис exchangeratesapi.io
     let myHeaders = new Headers();
     myHeaders.append("apikey", "K18dTs2jE17chvMiJY9ccJQ5rdyXjAe2");
 
@@ -28,14 +28,14 @@ class Rate extends React.Component {
     fetch("https://api.apilayer.com/exchangerates_data/latest", requestOptions)
       .then(data => data.json())
       .then(data => {
-        console.log(data);
+
         //Устанавливаем дату
         this.setState({ date: data.date });
         //Получаем курс выбранных нами валют из массива this.currency
         let result = {};
         for (let i = 0; i < this.currency.length; i++) {
           result[this.currency[i]] = data.rates[this.currency[i]];
-          console.log(result);
+
         }
         // Записываем в state данные курса валют
         this.setState({ currencyRate: result });
@@ -58,10 +58,8 @@ class Rate extends React.Component {
             </div>
           )
           )}
-
-
         </div>
-        <Calc rate={this.state.currencyRate}/>
+        <Calc rate={this.state.currencyRate} />
       </div>
 
     );
