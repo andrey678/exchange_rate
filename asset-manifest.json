@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react_project_1_exchange_rate/static/css/main.87d05d96.css",
+    "main.js": "/react_project_1_exchange_rate/static/js/main.5ba27709.js",
+    "index.html": "/react_project_1_exchange_rate/index.html",
+    "main.87d05d96.css.map": "/react_project_1_exchange_rate/static/css/main.87d05d96.css.map",
+    "main.5ba27709.js.map": "/react_project_1_exchange_rate/static/js/main.5ba27709.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.87d05d96.css",
+    "static/js/main.5ba27709.js"
+  ]
+}
