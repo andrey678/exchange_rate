@@ -1,3 +1,15 @@
+# Конвертер валют
+
+В приложении можно посмотреть текущий курс EUR, RUB, CAD, PHP по отношению к USD. Есть возможность конвертации необходимой суммы в USD. Сумма указывается в одной из четырёх валют EUR, RUB, CAD, PHP и переводится в USD по текущему курсу. Куры валюты предоставляется через api сайта openexchangerates.org
+
+Ссылка на приложение [Currency Exchange Rate](https://andrey678.github.io/react_project_1_exchange_rate/)
+
+# Currency Converter
+
+In the application you can see the current rate of EUR, RUB, CAD, PHP in relation to USD. It is possible to convert the required amount in USD. The sum is specified in one of four currencies EUR, RUB, CAD, PHP and converted to USD at the current rate. Currency rates are provided through the api of the site openexchangerates.org
+
+Link to the app [Currency Exchange Rate](https://andrey678.github.io/react_project_1_exchange_rate/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
