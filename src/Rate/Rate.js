@@ -7,30 +7,22 @@ class Rate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: '',
+      date: '',
       currencyRate: {}
     }
-    this.currency = ['USD', 'RUB', 'CAD', 'PHP'];
-    this.getRate();
+    this.currency = ['EUR', 'RUB', 'CAD', 'PHP'];
+
   }
 
   getRate = () => {
-    // Делаем запрос на сервис exchangeratesapi.io
-    let myHeaders = new Headers();
-    myHeaders.append("apikey", "K18dTs2jE17chvMiJY9ccJQ5rdyXjAe2");
+    // Делаем запрос на сервис openexchangerates.org
 
-    let requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
-      headers: myHeaders
-    };
-
-    fetch("https://api.apilayer.com/exchangerates_data/latest", requestOptions)
+    fetch("https://openexchangerates.org/api/latest.json?app_id=88d7caa2e2ed40ddb92b5a03965c487d")
       .then(data => data.json())
       .then(data => {
 
         //Устанавливаем дату
-        this.setState({ date: data.date });
+        this.setState({ date: new Date().setTime(data.timestamp * 1000) });
         //Получаем курс выбранных нами валют из массива this.currency
         let result = {};
         for (let i = 0; i < this.currency.length; i++) {
@@ -40,21 +32,28 @@ class Rate extends React.Component {
         // Записываем в state данные курса валют
         this.setState({ currencyRate: result });
       });
-    // .catch(error => console.log('error', error));
+
+  }
+  componentDidMount() {
+    this.getRate();
   }
   render() {
-
+    let formatter = new Intl.DateTimeFormat("ru", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
     return (
 
       <div className='rate'>
-        <h3> Курс валют на {this.state.date}</h3>
+        <h3> Курс валют на {formatter.format(this.state.date)}</h3>
         <div className="flex-container">
           {Object.keys(this.state.currencyRate).map((currencyName, index) =>
           (
             <div className="block flex-item" key={currencyName}>
               <div className="currency-name">{currencyName}</div>
               <div className="currency-in">{this.state.currencyRate[currencyName].toFixed(2)}*</div>
-              <p className="currency-out">*Можно купить за 1 EUR</p>
+              <p className="currency-out">*Можно купить за 1 USD</p>
             </div>
           )
           )}
